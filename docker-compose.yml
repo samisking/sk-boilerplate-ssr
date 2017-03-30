@@ -1,0 +1,14 @@
+boilerplate:
+  build: .
+  environment:
+    - NODE_ENV=development
+    - HOSTNAME=${DOCKER_IP}
+    - PORT=3000
+  expose:
+    - "3000"
+  ports:
+    - "3000:3000"
+  volumes:
+    - .:/home/app/boilerplate
+    - /home/app/boilerplate/node_modules
+  command: yarn run start:dev
